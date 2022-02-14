@@ -14,7 +14,7 @@ def trace():
   popen.stdin.write("echo --- END OF PROFILING ---")
   popen.stdin.close()
 
-  print "Done executing."
+  print("Done executing.")
 
   return popen.stderr.readlines()
 
@@ -23,8 +23,8 @@ def collect_timings(tokens, index):
     return [0] + tokens
 
   if DEBUG:
-    print "tokenized trace is: %s" % tokenized_trace
-    print "tokens are %s" % tokens
+    print("tokenized trace is: %s" % tokenized_trace)
+    print("tokens are %s" % tokens)
 
   timing = float(tokenized_trace[index+1][1].replace(".N", "")) - float(tokens[1].replace(".N", "")) 
   return [timing] + tokens
@@ -62,8 +62,8 @@ if __name__ == '__main__':
   arguments = filter(lambda x: x != "--debug", sys.argv)
 
   if len(arguments) < 2:
-    print "Usage: call this script with the path to another script to profile."
-    print "e.g.: %s /some/path/script.sh param1 param2" % arguments[0]
+    print("Usage: call this script with the path to another script to profile.")
+    print("e.g.: %s /some/path/script.sh param1 param2" % arguments[0])
     exit(1)
 
   tmp_tokens = [line.split(":") for line in trace()]
