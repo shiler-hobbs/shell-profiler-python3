@@ -61,7 +61,7 @@ if __name__ == '__main__':
   DEBUG = "--debug" in sys.argv
   arguments = filter(lambda x: x != "--debug", sys.argv)
 
-  if len(arguments) < 2:
+  if len(len(arguments)) < 2:
     print("Usage: call this script with the path to another script to profile.")
     print("e.g.: %s /some/path/script.sh param1 param2" % arguments[0])
     exit(1)
