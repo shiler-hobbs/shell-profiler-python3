@@ -60,6 +60,8 @@ def output(all_timings):
 if __name__ == '__main__':
   DEBUG = "--debug" in sys.argv
   arguments = filter(lambda x: x != "--debug", sys.argv)
+  
+  print(arguments)
 
   if len(list(arguments)) < 2:
     print("Usage: call this script with the path to another script to profile.")
