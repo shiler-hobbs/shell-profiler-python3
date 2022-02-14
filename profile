@@ -63,7 +63,8 @@ if __name__ == '__main__':
 
   if len(list(arguments)) < 2:
     print("Usage: call this script with the path to another script to profile.")
-    print("e.g.: %s /some/path/script.sh param1 param2" % arguments[0])
+    #  % arguments[0]
+    print("e.g.: %s /some/path/script.sh param1 param2")
     exit(1)
 
   tmp_tokens = [line.split(":") for line in trace()]
